@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		772FD33D2F968ED6008D31F5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 772FD33C2F968ED6008D31F5 /* SnapKit */; };
+		772FD3402F968EE1008D31F5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 772FD33F2F968EE1008D31F5 /* Then */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		772FD3232F968C0B008D31F5 /* Watcha-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watcha-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -14,7 +19,7 @@
 		772FD3352F968C0D008D31F5 /* Exceptions for "Watcha-Clone" folder in "Watcha-Clone" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resource/Info.plist,
 			);
 			target = 772FD3222F968C0B008D31F5 /* Watcha-Clone */;
 		};
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				772FD33D2F968ED6008D31F5 /* SnapKit in Frameworks */,
+				772FD3402F968EE1008D31F5 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = "Watcha-Clone";
 			packageProductDependencies = (
+				772FD33C2F968ED6008D31F5 /* SnapKit */,
+				772FD33F2F968EE1008D31F5 /* Then */,
 			);
 			productName = "Watcha-Clone";
 			productReference = 772FD3232F968C0B008D31F5 /* Watcha-Clone.app */;
@@ -107,6 +116,10 @@
 			);
 			mainGroup = 772FD31A2F968C0B008D31F5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				772FD33B2F968ED6008D31F5 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				772FD33E2F968EE1008D31F5 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 772FD3242F968C0B008D31F5 /* Products */;
 			projectDirPath = "";
@@ -146,7 +159,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Watcha-Clone/Info.plist";
+				INFOPLIST_FILE = "Watcha-Clone/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -176,7 +189,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Watcha-Clone/Info.plist";
+				INFOPLIST_FILE = "Watcha-Clone/Resource/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -339,6 +352,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		772FD33B2F968ED6008D31F5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		772FD33E2F968EE1008D31F5 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		772FD33C2F968ED6008D31F5 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 772FD33B2F968ED6008D31F5 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		772FD33F2F968EE1008D31F5 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 772FD33E2F968EE1008D31F5 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 772FD31B2F968C0B008D31F5 /* Project object */;
 }
