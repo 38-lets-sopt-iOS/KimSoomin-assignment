@@ -81,7 +81,7 @@ class AuthButton: UIButton {
         if style == .complete {
             self.setTitleColor(.watchaWhite, for: .normal)
             self.setTitleColor(.watchaWhite, for: .disabled)
-                backgroundColor = .gray600
+            backgroundColor = .gray600
         } else {
             self.setTitleColor(.watchaWhite, for: .normal)
             self.setTitleColor(.gray200, for: .disabled)
@@ -91,8 +91,7 @@ class AuthButton: UIButton {
     }
     
     private func updateBackgroundColor() {
-        if style == .complete {
-        } else {
+        if style != .complete {
             backgroundColor = isEnabled ? .watchaPink : .gray400
         }
     }
