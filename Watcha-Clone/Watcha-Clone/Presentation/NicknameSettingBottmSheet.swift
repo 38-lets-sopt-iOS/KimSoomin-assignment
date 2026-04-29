@@ -14,7 +14,7 @@ protocol CompleteNicknameSettingDelegate: AnyObject {
     func setNickname(nickname: String)
 }
 
-final class NicknameSettingBottmSheet: BaseUIViewController {
+final class NicknameBottmSheetViewController: BaseUIViewController {
     
     // MARK: - Properties
     

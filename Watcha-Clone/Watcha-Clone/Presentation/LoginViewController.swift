@@ -103,7 +103,7 @@ final class LoginViewController: BaseUIViewController {
     
     // MARK: - Action
     
-    @objc func nextButtonTapped() {
+    @objc private func nextButtonTapped() {
         guard nextButton.isEnabled else { return }
         pushToPasswordViewController()
     }

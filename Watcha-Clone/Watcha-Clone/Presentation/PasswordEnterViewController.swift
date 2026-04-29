@@ -153,8 +153,8 @@ final class PasswordEnterViewController: BaseUIViewController {
         }
     }
     
-    private func presentToNicknameBottomSheet() {
-        let viewController = NicknameSettingBottmSheet()
+    private func presentToNicknameBottomSheetViewController() {
+        let viewController = NicknameBottmSheetViewController()
         viewController.modalPresentationStyle = .overFullScreen
         viewController.delegate = self
         self.present(viewController, animated: true)
@@ -179,11 +179,11 @@ final class PasswordEnterViewController: BaseUIViewController {
     
     // MARK: - Actions
     
-    @objc func nicknameSettingButtonTapped() {
-        presentToNicknameBottomSheet()
+    @objc private func nicknameSettingButtonTapped() {
+        presentToNicknameBottomSheetViewController()
     }
     
-    @objc func registerButtonTapped() {
+    @objc private func registerButtonTapped() {
         pushToWelcomeViewController()
     }
 }
