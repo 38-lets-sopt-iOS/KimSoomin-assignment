@@ -10,22 +10,29 @@ import UIKit
 import SnapKit
 
 enum ButtonStyle {
-    case next
-    case register
-    case complete
-    case main
+    case next, register, complete, main
     
     var title: String {
         switch self {
-        case .next:
-            return "다음"
-        case .register:
-            return "가입하기"
-        case .complete:
-            return "완료"
-        case .main:
-            return "메인으로"
+        case .next: return "다음"
+        case .register: return "가입하기"
+        case .complete: return "완료"
+        case .main: return "메인으로"
         }
+    }
+    
+    func backgroundColor(isEnabled: Bool) -> UIColor {
+        if self == .complete {
+            return .gray600
+        }
+        return isEnabled ? .watchaPink : .gray400
+    }
+    
+    func titleColor(isEnabled: Bool) -> UIColor {
+        if self == .complete {
+            return .watchaWhite
+        }
+        return isEnabled ? .watchaWhite : .gray200
     }
 }
 
@@ -35,13 +42,13 @@ class AuthButton: UIButton {
     
     var style: ButtonStyle = .next {
         didSet {
-            updateStyle()
+            updateButtonStyle()
         }
     }
     
     override var isEnabled: Bool {
         didSet {
-            updateBackgroundColor()
+            updateButtonStyle()
         }
     }
     
@@ -51,8 +58,6 @@ class AuthButton: UIButton {
         super.init(frame: frame)
         setUI()
         setLayout()
-        
-        updateStyle()
     }
     
     required init?(coder: NSCoder) {
@@ -75,24 +80,12 @@ class AuthButton: UIButton {
     
     // MARK: - Private Methods
     
-    private func updateStyle() {
+    private func updateButtonStyle() {
         self.setTitle(style.title, for: .normal)
         
-        if style == .complete {
-            self.setTitleColor(.watchaWhite, for: .normal)
-            self.setTitleColor(.watchaWhite, for: .disabled)
-            backgroundColor = .gray600
-        } else {
-            self.setTitleColor(.watchaWhite, for: .normal)
-            self.setTitleColor(.gray200, for: .disabled)
-        }
+        self.backgroundColor = style.backgroundColor(isEnabled: self.isEnabled)
         
-        updateBackgroundColor()
-    }
-    
-    private func updateBackgroundColor() {
-        if style != .complete {
-            backgroundColor = isEnabled ? .watchaPink : .gray400
-        }
+        self.setTitleColor(style.titleColor(isEnabled: true), for: .normal)
+        self.setTitleColor(style.titleColor(isEnabled: false), for: .disabled)
     }
 }
