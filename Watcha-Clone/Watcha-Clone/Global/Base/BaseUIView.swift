@@ -13,6 +13,8 @@ class BaseUIView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        setStyle()
         setUI()
         setLayout()
     }
@@ -22,6 +24,8 @@ class BaseUIView: UIView {
     }
     
     // MARK: - Setup Methods
+    
+    func setStyle() {}
 
     func setUI() {}
 

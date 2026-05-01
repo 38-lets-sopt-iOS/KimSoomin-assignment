@@ -20,15 +20,16 @@ class BaseUIViewController: UIViewController {
         setStyle()
         setUI()
         setLayout()
+        setAction()
     }
     
     // MARK: - Setup Methods
     
-    func setStyle() {
-        view.backgroundColor = .systemBackground
-    }
+    func setStyle() {}
     
     func setUI() {}
     
     func setLayout() {}
+    
+    func setAction() {}
 }
