@@ -21,12 +21,13 @@ final class WelcomeViewController: BaseUIViewController {
     
     private let welcomeLabel = UILabel().then {
         $0.font = .head2
+        $0.text = "수민님\n가입을 환영합니다!"
         $0.textColor = .watchaWhite
         $0.textAlignment = .center
         $0.numberOfLines = 2
     }
     
-    private let goToMainButton = AuthButton().then {
+    private lazy var goToMainButton = AuthButton().then {
         $0.style = .main
         $0.isEnabled = true
     }
@@ -61,6 +62,17 @@ final class WelcomeViewController: BaseUIViewController {
         }
     }
     
+    override func setAction() {
+        goToMainButton.addTarget(self, action: #selector(pushTomMainViewController), for: .touchUpInside)
+    }
+    
+    // MARK: - Private Method
+    
+    @objc private func pushTomMainViewController() {
+        let viewController = WatchaTabBarController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     // MARK: - Public Method
     
     func bindNickname(nickname: String?) {
@@ -72,4 +84,3 @@ final class WelcomeViewController: BaseUIViewController {
         }
     }
 }
-
