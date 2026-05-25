@@ -85,11 +85,9 @@ final class WatchaTabBarController: UITabBarController {
             let rootVC = tab.viewController
             let navigationViewController = UINavigationController(rootViewController: rootVC)
             
-            let icon = (tab == .subscription) ? tab.image.withRenderingMode(.alwaysTemplate) : tab.image
-            
             navigationViewController.tabBarItem = UITabBarItem(
                 title: tab.title,
-                image: icon,
+                image: tab.image,
                 tag: tab.rawValue
             )
             
