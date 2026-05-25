@@ -17,6 +17,7 @@ final class CustomTopBarView: BaseUIView {
     private let videoIconImageView = UIImageView()
     private let bellIconImageView = UIImageView()
     private let profileIconImageView = UIImageView()
+    private let iconStackView = UIStackView()
     
     // MARK: - Custom Methods
     
@@ -34,29 +35,25 @@ final class CustomTopBarView: BaseUIView {
         profileIconImageView.do {
             $0.image = .profile
         }
+        
+        iconStackView.do {
+            $0.axis = .horizontal
+            $0.distribution = .equalSpacing
+            $0.alignment = .center
+            $0.spacing = 20
+        }
     }
     
     override func setUI() {
-        addSubviews(videoIconImageView, bellIconImageView, profileIconImageView)
+        iconStackView.addArrangedSubviews(videoIconImageView, bellIconImageView, profileIconImageView)
+        addSubviews(iconStackView)
     }
     
     override func setLayout() {
-        profileIconImageView.snp.makeConstraints {
+        iconStackView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(60)
             $0.trailing.equalToSuperview().inset(30)
-            $0.size.equalTo(24)
-        }
-        
-        bellIconImageView.snp.makeConstraints {
-            $0.top.equalTo(profileIconImageView)
-            $0.trailing.equalTo(profileIconImageView.snp.leading).offset(-20)
-            $0.size.equalTo(24)
-        }
-        
-        videoIconImageView.snp.makeConstraints {
-            $0.top.equalTo(profileIconImageView)
-            $0.trailing.equalTo(bellIconImageView.snp.leading).offset(-20)
-            $0.size.equalTo(24)
+            $0.bottom.equalToSuperview()
         }
     }
 }
