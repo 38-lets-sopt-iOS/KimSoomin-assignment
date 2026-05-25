@@ -79,7 +79,7 @@ class SubscriptionViewController: BaseUIViewController {
         }
         
         startSubscriptionView.snp.makeConstraints {
-            $0.horizontalEdges.equalToSuperview().inset(30)
+            $0.horizontalEdges.equalToSuperview().inset(12)
             $0.bottom.equalToSuperview().inset(117)
             $0.height.equalTo(86)
         }
